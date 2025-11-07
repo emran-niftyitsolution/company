@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import { useState, useEffect } from 'react';
-import Link from 'next/link';
-import { MenuIcon, CloseIcon } from './icons';
+import Link from "next/link";
+import { useEffect, useState } from "react";
+import { CloseIcon, MenuIcon } from "./icons";
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -12,29 +12,29 @@ export default function Header() {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
     };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const navItems = [
-    { label: 'Home', href: '/#home' },
-    { label: 'Services', href: '/#services' },
-    { label: 'About', href: '/#about' },
-    { label: 'Portfolio', href: '/#portfolio' },
-    { label: 'Contact', href: '/#contact' },
-    { label: 'Solutions', href: '/solutions' },
-    { label: 'Case Studies', href: '/case-studies' },
-    { label: 'Team', href: '/team' },
-    { label: 'Blog', href: '/blog' },
-    { label: 'Careers', href: '/careers' },
+    { label: "Home", href: "/#home" },
+    { label: "Services", href: "/#services" },
+    { label: "About", href: "/#about" },
+    { label: "Portfolio", href: "/#portfolio" },
+    { label: "Contact", href: "/#contact" },
+    { label: "Solutions", href: "/solutions" },
+    { label: "Case Studies", href: "/case-studies" },
+    { label: "Team", href: "/team" },
+    { label: "Blog", href: "/blog" },
+    { label: "Careers", href: "/careers" },
   ];
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-      scrolled 
-        ? 'bg-black/80 backdrop-blur-2xl shadow-2xl' 
-        : 'bg-transparent'
-    }`}>
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+        scrolled ? "bg-black/80 backdrop-blur-2xl shadow-2xl" : "bg-transparent"
+      }`}
+    >
       <div className="max-w-[1600px] mx-auto px-6 lg:px-12">
         <div className="flex items-center justify-between h-24">
           <Link href="#home" className="relative group">
