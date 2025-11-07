@@ -92,7 +92,7 @@ export default function Hero() {
                 <div className="relative rounded-[2.5rem] overflow-hidden">
                   <Image
                     src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop"
-                    alt="Dashboard on MacBook"
+                    alt="iMac with dashboard"
                     width={800}
                     height={600}
                     className="w-full h-auto"

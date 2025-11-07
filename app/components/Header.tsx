@@ -19,13 +19,14 @@ export default function Header() {
   const navItems = [
     { label: 'Home', href: '/#home' },
     { label: 'Services', href: '/#services' },
-    { label: 'Solutions', href: '/solutions' },
+    { label: 'About', href: '/#about' },
     { label: 'Portfolio', href: '/#portfolio' },
+    { label: 'Contact', href: '/#contact' },
+    { label: 'Solutions', href: '/solutions' },
     { label: 'Case Studies', href: '/case-studies' },
     { label: 'Team', href: '/team' },
     { label: 'Blog', href: '/blog' },
     { label: 'Careers', href: '/careers' },
-    { label: 'Contact', href: '/#contact' },
   ];
 
   return (
