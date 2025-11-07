@@ -68,41 +68,41 @@ const projects = [
 
 export default function Portfolio() {
   return (
-    <section id="portfolio" className="relative py-32 px-4 sm:px-6 lg:px-12 bg-black overflow-hidden">
+    <section id="portfolio" className="relative py-16 sm:py-24 lg:py-32 px-4 sm:px-6 lg:px-12 bg-black overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 z-0">
-        <div className="absolute top-0 left-1/4 w-[700px] h-[700px] bg-gradient-to-r from-pink-500/20 to-transparent rounded-full blur-3xl"></div>
-        <div className="absolute bottom-0 right-1/4 w-[600px] h-[600px] bg-gradient-to-l from-cyan-500/20 to-transparent rounded-full blur-3xl"></div>
+        <div className="absolute top-0 left-1/4 w-[350px] h-[350px] sm:w-[700px] sm:h-[700px] bg-gradient-to-r from-pink-500/20 to-transparent rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 right-1/4 w-[300px] h-[300px] sm:w-[600px] sm:h-[600px] bg-gradient-to-l from-cyan-500/20 to-transparent rounded-full blur-3xl"></div>
       </div>
 
       <div className="relative z-10 max-w-[1600px] mx-auto">
         {/* Header */}
-        <div className="text-center mb-20">
-          <div className="inline-block mb-6">
-            <span className="text-sm font-bold text-purple-400 uppercase tracking-wider">Our Portfolio</span>
+        <div className="text-center mb-12 sm:mb-16 lg:mb-20">
+          <div className="inline-block mb-4 sm:mb-6">
+            <span className="text-xs sm:text-sm font-bold text-purple-400 uppercase tracking-wider">Our Portfolio</span>
           </div>
-          <h2 className="text-6xl sm:text-7xl lg:text-8xl font-black mb-6">
+          <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black mb-4 sm:mb-6">
             <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent">
               Featured Work
             </span>
           </h2>
-          <p className="text-xl text-gray-400 max-w-2xl mx-auto font-light">
+          <p className="text-base sm:text-lg md:text-xl text-gray-400 max-w-2xl mx-auto font-light px-4">
             Showcasing our expertise through successful projects across various industries
           </p>
         </div>
 
-        {/* Creative Grid Layout */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {/* Creative Grid Layout - Mobile first: 1 column, then 2, then 3 */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           {projects.map((project, index) => {
             const isFeatured = project.featured;
             const colSpan = isFeatured ? 'md:col-span-2 lg:col-span-2' : '';
             const rowSpan = isFeatured ? 'md:row-span-2 lg:row-span-2' : '';
-            const height = isFeatured ? 'h-[600px]' : 'h-[400px]';
+            const height = isFeatured ? 'h-[500px] sm:h-[600px]' : 'h-[350px] sm:h-[400px]';
             
             return (
               <div
                 key={index}
-                className={`group relative overflow-hidden rounded-3xl ${colSpan} ${rowSpan} ${height} border border-white/10 bg-gradient-to-br from-white/5 to-white/0 backdrop-blur-sm hover:border-white/20 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl`}
+                className={`group relative overflow-hidden rounded-2xl sm:rounded-3xl ${colSpan} ${rowSpan} ${height} border border-white/10 bg-gradient-to-br from-white/5 to-white/0 backdrop-blur-sm hover:border-white/20 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl`}
               >
                 {/* Image Background */}
                 <div className="absolute inset-0">
@@ -117,37 +117,37 @@ export default function Portfolio() {
                 </div>
 
                 {/* Content */}
-                <div className="relative h-full flex flex-col justify-between p-8">
+                <div className="relative h-full flex flex-col justify-between p-4 sm:p-6 lg:p-8">
                   <div>
-                    <div className="flex items-center justify-between mb-6">
-                      <div className={`inline-flex p-3 rounded-xl bg-gradient-to-br ${project.gradient} group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 shadow-xl`}>
+                    <div className="flex items-center justify-between mb-4 sm:mb-6">
+                      <div className={`inline-flex p-2 sm:p-3 rounded-lg sm:rounded-xl bg-gradient-to-br ${project.gradient} group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 shadow-xl`}>
                         {project.icon}
                       </div>
-                      <span className="px-4 py-1.5 rounded-full bg-white/20 backdrop-blur-md text-xs font-bold text-white border border-white/30">
+                      <span className="px-3 py-1 sm:px-4 sm:py-1.5 rounded-full bg-white/20 backdrop-blur-md text-[10px] sm:text-xs font-bold text-white border border-white/30">
                         {project.category}
                       </span>
                     </div>
-                    <h3 className={`${isFeatured ? 'text-4xl' : 'text-2xl'} font-black text-white mb-4 leading-tight`}>
+                    <h3 className={`${isFeatured ? 'text-2xl sm:text-3xl lg:text-4xl' : 'text-xl sm:text-2xl'} font-black text-white mb-3 sm:mb-4 leading-tight`}>
                       {project.title}
                     </h3>
-                    <p className={`${isFeatured ? 'text-lg' : 'text-sm'} text-gray-200 leading-relaxed opacity-90 group-hover:opacity-100 transition-opacity`}>
+                    <p className={`${isFeatured ? 'text-sm sm:text-base lg:text-lg' : 'text-xs sm:text-sm'} text-gray-200 leading-relaxed opacity-90 group-hover:opacity-100 transition-opacity`}>
                       {project.description}
                     </p>
                   </div>
 
-                  <div className="mt-6">
-                    <div className="flex flex-wrap gap-2 mb-4">
+                  <div className="mt-4 sm:mt-6">
+                    <div className="flex flex-wrap gap-2 mb-3 sm:mb-4">
                       {project.tech.map((tech, techIndex) => (
                         <span
                           key={techIndex}
-                          className="px-3 py-1 rounded-full bg-white/20 backdrop-blur-md text-xs font-semibold text-white border border-white/30"
+                          className="px-2 py-0.5 sm:px-3 sm:py-1 rounded-full bg-white/20 backdrop-blur-md text-[10px] sm:text-xs font-semibold text-white border border-white/30"
                         >
                           {tech}
                         </span>
                       ))}
                     </div>
-                    <button className="flex items-center gap-2 text-white font-bold hover:gap-4 transition-all group/btn">
-                      View Project <ArrowRightIcon size={20} className="group-hover/btn:translate-x-1 transition-transform" />
+                    <button className="flex items-center gap-2 text-white font-bold hover:gap-4 transition-all group/btn text-sm sm:text-base min-h-[44px]">
+                      View Project <ArrowRightIcon size={18} className="sm:w-5 sm:h-5 group-hover/btn:translate-x-1 transition-transform" />
                     </button>
                   </div>
                 </div>

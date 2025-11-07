@@ -116,40 +116,40 @@ const services = [
 
 export default function Services() {
   return (
-    <section id="services" className="relative py-32 px-4 sm:px-6 lg:px-12 bg-black overflow-hidden">
+    <section id="services" className="relative py-16 sm:py-24 lg:py-32 px-4 sm:px-6 lg:px-12 bg-black overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 z-0">
-        <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-gradient-to-bl from-purple-500/20 to-transparent rounded-full blur-3xl"></div>
-        <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-gradient-to-tr from-cyan-500/20 to-transparent rounded-full blur-3xl"></div>
+        <div className="absolute top-0 right-0 w-[400px] h-[400px] sm:w-[800px] sm:h-[800px] bg-gradient-to-bl from-purple-500/20 to-transparent rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 left-0 w-[300px] h-[300px] sm:w-[600px] sm:h-[600px] bg-gradient-to-tr from-cyan-500/20 to-transparent rounded-full blur-3xl"></div>
       </div>
 
       <div className="relative z-10 max-w-[1600px] mx-auto">
         {/* Header */}
-        <div className="text-center mb-20">
-          <div className="inline-block mb-6">
-            <span className="text-sm font-bold text-cyan-400 uppercase tracking-wider">Our Services</span>
+        <div className="text-center mb-12 sm:mb-16 lg:mb-20">
+          <div className="inline-block mb-4 sm:mb-6">
+            <span className="text-xs sm:text-sm font-bold text-cyan-400 uppercase tracking-wider">Our Services</span>
           </div>
-          <h2 className="text-6xl sm:text-7xl lg:text-8xl font-black mb-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-black mb-4 sm:mb-6">
             <span className="bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
               What We Do
             </span>
           </h2>
-          <p className="text-xl text-gray-400 max-w-2xl mx-auto font-light">
+          <p className="text-base sm:text-lg md:text-xl text-gray-400 max-w-2xl mx-auto font-light px-4">
             Comprehensive software solutions covering every aspect of development and deployment
           </p>
         </div>
 
-        {/* Creative Masonry Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {/* Creative Masonry Grid - Mobile first: 1 column, then 2, then 4 */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
           {services.map((service, index) => {
-            const colSpan = service.size === 'large' ? 'lg:col-span-2' : '';
-            const rowSpan = service.size === 'large' ? 'lg:row-span-2' : '';
-            const height = service.size === 'large' ? 'h-[500px]' : service.size === 'medium' ? 'h-[350px]' : 'h-[280px]';
+            const colSpan = service.size === 'large' ? 'sm:col-span-2 lg:col-span-2' : '';
+            const rowSpan = service.size === 'large' ? 'sm:row-span-2 lg:row-span-2' : '';
+            const height = service.size === 'large' ? 'h-[400px] sm:h-[500px]' : service.size === 'medium' ? 'h-[300px] sm:h-[350px]' : 'h-[280px] sm:h-[280px]';
             
             return (
               <div
                 key={index}
-                className={`group relative overflow-hidden rounded-3xl ${colSpan} ${rowSpan} ${height} border border-white/10 bg-gradient-to-br from-white/5 to-white/0 backdrop-blur-sm hover:border-white/20 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl`}
+                className={`group relative overflow-hidden rounded-2xl sm:rounded-3xl ${colSpan} ${rowSpan} ${height} border border-white/10 bg-gradient-to-br from-white/5 to-white/0 backdrop-blur-sm hover:border-white/20 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl`}
               >
                 {/* Image Background */}
                 <div className="absolute inset-0">
@@ -164,16 +164,16 @@ export default function Services() {
                 </div>
 
                 {/* Content */}
-                <div className="relative h-full flex flex-col justify-between p-8">
+                <div className="relative h-full flex flex-col justify-between p-4 sm:p-6 lg:p-8">
                   <div>
-                    <div className={`inline-flex p-4 rounded-2xl bg-gradient-to-br ${service.gradient} mb-6 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 shadow-xl`}>
+                    <div className={`inline-flex p-2 sm:p-3 lg:p-4 rounded-xl sm:rounded-2xl bg-gradient-to-br ${service.gradient} mb-3 sm:mb-4 lg:mb-6 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 shadow-xl`}>
                       {service.icon}
                     </div>
-                    <h3 className="text-2xl lg:text-3xl font-black text-white mb-3 leading-tight">
+                    <h3 className="text-lg sm:text-xl lg:text-2xl xl:text-3xl font-black text-white mb-2 sm:mb-3 leading-tight">
                       {service.title}
                     </h3>
                   </div>
-                  <p className="text-gray-200 text-sm lg:text-base leading-relaxed opacity-90 group-hover:opacity-100 transition-opacity">
+                  <p className="text-gray-200 text-xs sm:text-sm lg:text-base leading-relaxed opacity-90 group-hover:opacity-100 transition-opacity">
                     {service.description}
                   </p>
                 </div>
