@@ -5,22 +5,25 @@ import { GithubIcon, LinkedinIcon, TwitterIcon, FacebookIcon } from './icons';
 
 const footerLinks = {
   services: [
-    { label: 'Web Development', href: '#services' },
-    { label: 'Mobile Development', href: '#services' },
-    { label: 'Cloud & DevOps', href: '#services' },
-    { label: 'Consulting', href: '#services' },
+    { label: 'Web Development', href: '/#services' },
+    { label: 'Mobile Development', href: '/#services' },
+    { label: 'Cloud & DevOps', href: '/#services' },
+    { label: 'Solutions', href: '/solutions' },
   ],
   company: [
-    { label: 'About Us', href: '#about' },
-    { label: 'Portfolio', href: '#portfolio' },
-    { label: 'Contact', href: '#contact' },
-    { label: 'Careers', href: '#' },
+    { label: 'About Us', href: '/#about' },
+    { label: 'Team', href: '/team' },
+    { label: 'Case Studies', href: '/case-studies' },
+    { label: 'Testimonials', href: '/testimonials' },
+    { label: 'Careers', href: '/careers' },
+    { label: 'Contact', href: '/#contact' },
   ],
   resources: [
-    { label: 'Blog', href: '#' },
-    { label: 'Case Studies', href: '#' },
-    { label: 'Documentation', href: '#' },
-    { label: 'Support', href: '#' },
+    { label: 'Blog', href: '/blog' },
+    { label: 'Resources', href: '/resources' },
+    { label: 'FAQ', href: '/faq' },
+    { label: 'Pricing', href: '/pricing' },
+    { label: 'Partners', href: '/partners' },
   ],
 };
 
